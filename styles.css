@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: hsla(355, 75%, 56%, 1);
+}
+
+/* SECOND BUTTON */
+
+#menu-btn,
+#menu-btn2 {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#menu-btn2 {
+    top: 5rem;
+}
+
+#menu-btn span,
+#menu-btn2 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    margin: 2px 0;
+    background-color: white;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+}
+
+#menu-btn span:nth-child(1),
+#menu-btn2 span:nth-child(1) {
+    top: 0;
+}
+
+#menu-btn span:nth-child(2),
+#menu-btn2 span:nth-child(2) {
+    top: 8px;
+}
+
+#menu-btn span:nth-child(3),
+#menu-btn2 span:nth-child(3) {
+    top: 16px;
+}
+
+#menu-btn.open span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+}
+
+#menu-btn.open span:nth-child(2) {
+    opacity: 0;
+    left: -30px;
+}
+
+#menu-btn.open span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+}
+
+/* Button 2 */
+
+#menu-btn2 span {
+    transition: transform .5s ease;
+    animation-play-state: paused;
+}
+
+#menu-btn2.open span:nth-child(1) {
+    animation: animateLine1 0.5s forwards;
+    animation-play-state: running;
+}
+
+#menu-btn2.open span:nth-child(2) {
+    animation: animateLine2 0.5s forwards;
+    animation-play-state: running;
+}
+
+#menu-btn2.open span:nth-child(3) {
+    animation: animateLine3 0.5s forwards;
+    animation-play-state: running;
+}
+
+#menu-btn2:not(.open) span:nth-child(1) {
+    animation: reverseLine1 0.5s forwards;
+    animation-play-state: running;
+}
+
+#menu-btn2:not(.open) span:nth-child(2) {
+    animation: reverseLine2 0.5s forwards;
+    animation-play-state: running;
+}
+
+#menu-btn2:not(.open) span:nth-child(3) {
+    animation: reverseLine3 0.5s forwards;
+    animation-play-state: running;
+}
+
+@keyframes animateLine1 {
+    0% {
+        top: 0;
+        transform: rotate(0deg);
+    }
+    40% {
+        top: 8px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 8px;
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes animateLine2 {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes animateLine3 {
+    0% {
+        top: 16px;
+        transform: rotate(0deg);
+    }
+    40% {
+        top: 8px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 8px;
+        transform: rotate(225deg);
+    }
+}
+
+@keyframes reverseLine1 {
+    0% {
+        top: 8px;
+        transform: rotate(135deg);
+    }
+    40% {
+        top: 8px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 0px;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes reverseLine2 {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes reverseLine3 {
+    0% {
+        top: 8px;
+        transform: rotate(225deg);
+    }
+    40% {
+        top: 8px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 16px;
+        transform: rotate(0deg);
+    }
+}
